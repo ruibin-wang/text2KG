@@ -1,12 +1,12 @@
 # text2KG
 
 
-This project is tend to build a pipline for converting free text to knowldege gragh. There are three part of this project, including: entity extraction, relationship extraction and graph construction.
+This project tends to build a pipeline for converting free text to a knowledge graph. There are three parts to this project: entity extraction, relationship extraction and graph construction.
 
 
 * For the entity and relation extraction part, we use the OpenIE Java package, the details will be shown as follows.
 
-* For building a knowledge graph we choose the Neo4j to provide a visualable and efficient data management.
+* For building a knowledge graph we choose the Neo4j to provide visual and efficient data management.
 
 
 
@@ -51,22 +51,42 @@ This project is tend to build a pipline for converting free text to knowldege gr
     ```
     The response is a JSON list of extractions.
 
+## create the virtual environment
+
+* create the virtual environment on the server
+
+```python
+conda create --name text2KG python=3.8
+pip install pyopenie
+conda install -c "bioconda/label/cf201901" java-jdk
+```
+
+* create the virtual environment on the local pc
+```python
+conda create --name text2KG python=3.8
+pip install paramiko
+pip install py2neo
+pip install neo4jupyter
+```
+
+
 ## build the knowledge graph
 
-* This project used the Neo4j to provide a visualable and efficient data management.
+* This project used Neo4j to provide visual and efficient data management.
 
-* first, create a project in the local path with Neo4j, and remeber the host address and password. 
+* First, create a project in the local path with Neo4j, and remember the host address and password. 
 
-* open the project in a new browser
+* Open the project in a new browser
 
-* run the code 
+* Run the code 
     ```
     python test_demo.py
     ```
 
 ## Notice:
 
-1. this java package and model is very big, you need to run it in a server with a big storage.
+1. This java package and model are huge, you need to run it on a server with ample storage.
 
-2. 
+2. Run the HTTP server first, then create the virtual environment
+
 

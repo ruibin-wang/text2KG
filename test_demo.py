@@ -1,7 +1,7 @@
 import requests
 import json
 import paramiko
-from py2neo import Node, Relationship, Graph, NodeMatcher, RelationshipMatcher, NodeMatch
+from py2neo import Node, Relationship, Graph, NodeMatcher
 import neo4jupyter
 from ast import literal_eval
 
