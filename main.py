@@ -1,9 +1,15 @@
+# This file is used to vist the OpenIE server, obtain the (entity,relationship,entity) pair
+# This file running on the server side
+
+
 # from stanfordcorenlp import StanfordCoreNLP
 from pyopenie import OpenIE5
 from py2neo import Node, Relationship, Graph, NodeMatcher, RelationshipMatcher, NodeMatch
 import neo4jupyter
 
 
+######################################################################################
+#### This part of code is used to test package of standfordcorenlp
 # neo4jupyter.init_notebook_mode()
 #
 # graph = Graph("bolt://localhost:7687", auth=("neo4j", "neo4j_test"))
@@ -19,6 +25,8 @@ import neo4jupyter
 # print(nlp.dependency_parse(text))
 # print(nlp.parse(text))
 # print(nlp.annotate(text))
+
+######################################################################################
 
 
 # text = "Jack and Jill visited India, Japan and South Korea."

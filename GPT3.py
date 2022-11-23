@@ -4,7 +4,7 @@ import sys
 import openai
 import wandb
 
-# export OPENAI_API_KEY = ""
+# export OPENAI_API_KEY = ""    ## add the api key here
 
 
 training_file = "./data/example_training.txt"
