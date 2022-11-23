@@ -90,3 +90,15 @@ pip install neo4jupyter
 2. Run the HTTP server first, then create the virtual environment
 
 
+## Examples
+
+text = "Jack and Jill visited India, Japan and South Korea."
+
+output = List(0.88 (Jill; visited; South Korea), 0.88 (Jill; visited; Japan), 0.88 (Jill; visited; India), 0.88 (Jack; visited; South Korea), 0.88 (Jack; visited; Japan), 0.88 (Jack; visited; India))
+
+* knowledge graph picture
+
+<center class="half">
+<img src=./picture/Figure1.png width = 70%>
+</center>
+
