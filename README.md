@@ -51,7 +51,7 @@ This project tends to build a pipeline for converting free text to a knowledge g
     ```
     The response is a JSON list of extractions.
 
-## create the virtual environment
+## Create the virtual environment
 
 * create the virtual environment on the server
 
@@ -70,7 +70,7 @@ pip install neo4jupyter
 ```
 
 
-## build the knowledge graph
+## Build the knowledge graph
 
 * This project used Neo4j to provide visual and efficient data management.
 
@@ -92,13 +92,62 @@ pip install neo4jupyter
 
 ## Examples
 
-text = "Jack and Jill visited India, Japan and South Korea."
+1. Case1 - normal test
 
-output = List(0.88 (Jill; visited; South Korea), 0.88 (Jill; visited; Japan), 0.88 (Jill; visited; India), 0.88 (Jack; visited; South Korea), 0.88 (Jack; visited; Japan), 0.88 (Jack; visited; India))
+    text = "Jack and Jill visited India, Japan and South Korea."
 
-* knowledge graph picture
+    output = List(0.88 (Jill; visited; South Korea), 0.88 (Jill; visited; Japan), 0.88 (Jill; visited; India), 0.88 (Jack; visited; South Korea), 0.88 (Jack; visited; Japan), 0.88 (Jack; visited; India))
 
-<center class="half">
-<img src=./picture/Figure1.png width = 70%>
-</center>
+    * knowledge graph picture
+
+    <center class="half">
+    <img src=./picture/Figure1.png width = 70%>
+    </center>
+
+2. Case2 - normal test
+
+    text = "Jack visited India, Japan and South Korea, but Jill only visited India and China"
+
+    output = List(0.86 (Jill; visited; China), 0.86 (Jill; visited; India), 0.88 (Jack; visited; South Korea), 0.88 (Jack; visited; Japan), 0.88 (Jack; visited; India))
+
+    * knowledge graph picture
+
+    <center class="half">
+    <img src=./picture/Figure2.png width = 70%>
+    </center>
+
+
+3. Case3 - normal test
+
+    text = "Jack visited India, Japan and South Korea, but Jill did not visit Japan, he visited India and China"
+
+    output = List(0.85 Context(he visited,List([21, 31))):(Jack; visited; Japan), 0.85 Context(he visited,List([27, 37))):(Jack; visited; South Korea), 0.88 (Jack; visited; Japan), 0.85 Context(he visited,List([21, 31))):(Jack; visited; India), 0.44 (he; visited; China), 0.85 Context(he visited,List([27, 37))):(Jill; did not visit; Japan), 0.44 (he; visited; India))
+
+
+    * knowledge graph picture
+
+    <center class="half">
+    <img src=./picture/Figure3.png width = 70%>
+    </center>
+
+
+    We can see two points which need to be improved from the picture, 
+    
+    * this model can not firgure out the negative word and treats the words "did not visit" as a relationship.
+
+    * this model can not map "he" to the subject "Jill".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

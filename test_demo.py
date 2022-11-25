@@ -52,7 +52,7 @@ tail_entities = []
 
 ## extract the head, tail and relation from the entity_pair
 for index in entity_pair:
-    if index[0] > 0.7: # when the confidence max then 0.7, keep them
+    if index[0] > 0.3: # when the confidence max then 0.7, keep them
         head_entities.append(index[1])
         relations.append(index[2])
         tail_entities.append(index[3])

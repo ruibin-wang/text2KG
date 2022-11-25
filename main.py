@@ -29,11 +29,14 @@ import neo4jupyter
 ######################################################################################
 
 
-text = "Jack and Jill visited India, Japan and South Korea."
+# text = "Jack and Jill visited India, Japan and South Korea."
 # text = "Niandra LaDes and Usually Just a T-Shirt is the debut album by the American musician John Frusciante, released on November 22, 1994, by American Recordings."
 # text = "He and Galloway were among at least 10 Texas inmates with execution dates in the coming weeks."
 
 # text = "Mr. Miller said that it is 40 feet wide."
+
+text = "Jack visited India, Japan and South Korea, but Jill did not visit Japan, he visited India and China"
+
 
 def Open_IE_output(text):
 
